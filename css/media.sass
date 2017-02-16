@@ -1,0 +1,40 @@
+@media only screen and (max-width: 960px)
+  .block
+    width: 100%
+@media only screen and (max-width: 600px)
+  .intro
+    text-align: center
+    background-position: center
+    &__logo
+      margin: 0 auto
+    &__reg
+      margin: 40px auto 0
+    &__agreement
+      margin: 10px auto 0
+    &__title
+      font-size: 9vw
+    &__subtitle
+      font-size: 7vw
+    &__number-value
+      font-size: 6vw
+    &__number-text
+      font-size: 3vw
+
+  .reg-form::after
+    display: none
+
+@media only screen and (max-width: 1200px)
+  .main-content__steps
+    flex-direction: row
+    justify-content: center
+  .steps-icons,
+  .steps-texts
+    flex-direction: column
+    height: 600px
+    padding: 10px 15px
+  .steps-icons::before
+    bottom: 49%
+    transform: rotate(90deg)
+    width: 590px
+    left: -225%
+    background-size: contain

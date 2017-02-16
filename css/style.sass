@@ -1,0 +1,241 @@
+$white: #fff
+$green: #449f42
+$black: #333333
+$gray: #88898c
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=cyrillic,cyrillic-ext')
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=cyrillic,cyrillic-ext')
+
+// reset
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, img, footer, header, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+
+img
+  max-width: 100%
+  height: auto
+
+input
+  outline: 0
+  border: 0
+  color: $white
+  font-family: 'Roboto', sans-serif
+  font-weight: 300
+
+a
+  color: inherit
+
+::-webkit-input-placeholder
+  color: $white
+  font-weight: 300
+::-moz-placeholder
+  color: $white
+  font-weight: 300
+\:-moz-placeholder
+  color: $white
+  font-weight: 300
+\:-ms-input-placeholder
+  color: $white
+  font-weight: 300
+
+// common
+.intro
+  background: url('../img/back.png') no-repeat
+  background-size: cover
+  width: 100%
+  height: 100%
+  min-height: 650px
+  max-height: 1024px
+  color: $white
+  font-family: 'Roboto', sans-serif
+  .block
+    padding-top: 65px
+  &__logo
+    width: 125px
+  &__title
+    font-size: 41px
+    line-height: 1.2
+    margin-top: 30px
+  &__subtitle
+    font-size: 37px
+    font-weight: 300
+    line-height: 1
+  &__reg
+    display: flex
+    flex-direction: column
+    width: 230px
+    height: 180px
+    justify-content: space-between
+    margin-top: 40px
+  &__agreement
+    width: 230px
+    text-align: center
+    color: $gray
+    font-size: 11px
+    font-weight: 300
+    margin-top: 10px
+  &__number
+    text-align: center
+    margin-top: 20px
+    font-family: 'Open Sans', sans-serif
+    &-value
+      font-size: 30px
+      font-weight: 600
+      line-height: 1.5
+    &-text
+      color: $green
+      font-size: 16px
+
+.block
+  width: 870px
+  margin: 0 auto
+
+.reg-form
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    background: url('../img/start.png') no-repeat
+    background-size: contain
+    width: 140px
+    height: 20px
+    bottom: 0
+    right: -150px
+  &__item
+    background: rgba($white, 0.3)
+    padding: 7px
+    border-radius: 100px
+    text-align: center
+  &__submit
+    background: $green
+    cursor: pointer
+  &__currency
+    display: flex
+    margin: 5px 0 15px
+  &__text
+    font-size: 10px
+    font-family: "Open Sans"
+    text-align: center
+    line-height: 1
+    margin: 10px 0 5px
+
+
+.main-content
+  background: $white
+  padding-bottom: 60px
+  .block
+    padding-top: 55px
+  &__title
+    text-align: center
+    font-size: 30px
+    color: $black
+    line-height: 1
+    font-family: 'Open Sans', sans-serif
+    font-weight: 400
+  &__steps
+    display: flex
+    flex-direction: column
+
+
+.steps-icons
+  display: flex
+  justify-content: space-around
+  align-items: center
+  padding: 40px 0 20px
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    background: url('../img/line.jpg') no-repeat
+    width: 100%
+    height: 12px
+    background-size: cover
+    bottom: 0
+    z-index: 999
+
+.steps-texts
+  display: flex
+  justify-content: space-around
+  align-items: flex-start
+  padding: 10px 0 0
+
+.text
+  width: 125px
+  font-size: 12px
+  font-family: "Open Sans"
+  color: $black
+  line-height: 1.286
+  text-align: center
+
+.icon
+  width: 60px
+  height: 65px
+  background: url('../img/icons.png')
+  background-size: cover
+  &.-first
+    background-position: 3px 0
+  &.-second
+    background-position: -60px 0
+  &.-third
+    background-position: -123px 0
+  &.-fourth
+    background-position: -188px 0
+  &.-fifth
+    background-position: -252px 0
+  &.-sixth
+    background-position: 60px 0
+
+.radio
+  vertical-align: top
+  width: 1px
+  height: 1px
+  + label
+    cursor: pointer
+  &:not(checked)
+    position: absolute
+    opacity: 0
+    + label
+      position: relative
+      padding: 10px 30px
+      font-size: 11px
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 40px
+        background: rgba($white, 0.3)
+        padding: 15px 20px
+  &:checked + label:after
+    opacity: 1
+  &:focus + label
+    color: $green
+    &:before
+      box-shadow: 0 0 0 1px $green
+
+.radio1
+  &:not(checked) + label::before
+    border-top-left-radius: 100px
+    border-bottom-left-radius: 100px
+    width: 40%
+
+.radio2
+  &:not(checked) + label
+    padding: 10px 20px 10px 5px
+    &::before
+      border-right: 1px solid $black
+      border-left: 1px solid $black
+      left: -15px
+
+.radio3
+  &:not(checked) + label::before
+    border-top-right-radius: 100px
+    border-bottom-right-radius: 100px
+    left: 3px
+    width: 40%
+
+@import "media"
